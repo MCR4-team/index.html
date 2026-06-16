@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR4 KEY SYSTEM</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        -45deg,
+        #050505,
+        #07111f,
+        #001f3d,
+        #050505
+    );
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    width:460px;
+    padding:35px;
+    border-radius:30px;
+    background:rgba(15,15,15,.75);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(0,140,255,.4);
+
+    box-shadow:
+    0 0 25px rgba(0,140,255,.4),
+    0 0 70px rgba(0,140,255,.15),
+    inset 0 0 20px rgba(255,255,255,.03);
+
+    text-align:center;
+
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    color:white;
+    letter-spacing:3px;
+
+    text-shadow:
+    0 0 10px #008cff,
+    0 0 30px #008cff;
+}
+
+.subtitle{
+    color:#78bfff;
+    margin-top:10px;
+    margin-bottom:25px;
+}
+
+.key-box{
+    background:#000;
+    border:1px solid #008cff;
+    border-radius:18px;
+    padding:18px;
+    color:white;
+    font-size:18px;
+    word-break:break-all;
+
+    box-shadow:
+    0 0 15px rgba(0,140,255,.25);
+}
+
+.timer{
+    margin-top:15px;
+    color:#8ec8ff;
+    font-size:15px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    margin-top:25px;
+}
+
+button{
+    border:none;
+    padding:14px 26px;
+    border-radius:16px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+.copy-btn{
+    background:linear-gradient(
+        135deg,
+        #008cff,
+        #00c3ff
+    );
+
+    box-shadow:
+    0 0 25px rgba(0,140,255,.5);
+}
+
+.discord-btn{
+    background:linear-gradient(
+        135deg,
+        #5865F2,
+        #7B86FF
+    );
+
+    box-shadow:
+    0 0 25px rgba(88,101,242,.5);
+}
+
+.footer{
+    margin-top:25px;
+    color:#666;
+    font-size:13px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>MCR4 KEY SYSTEM</h1>
+
+    <div class="subtitle">
+        Premium Secure Key Generator
+    </div>
+
+    <div class="key-box" id="key">
+        Loading...
+    </div>
+
+    <div class="timer">
+        Expires in:
+        <span id="countdown">24:00:00</span>
+    </div>
+
+    <div class="buttons">
+        <button class="copy-btn" onclick="copyKey()">
+            📋 Copy Key
+        </button>
+
+        <button class="discord-btn"
+        onclick="window.open('https://discord.gg/crXn2fdMJe','_blank')">
+            💬 Discord
+        </button>
+    </div>
+
+    <div class="footer">
+        © MCR4 KEY SYSTEM
+    </div>
+
+</div>
+
+<script>
+
+function generateKey(){
+
+    const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    let prefix = "";
+
+    for(let i=0;i<4;i++){
+        prefix += chars.charAt(
+        Math.floor(Math.random()*chars.length)
+        );
+    }
+
+    const number =
+    Math.floor(
+    100000000 + Math.random()*900000000
+    );
+
+    return prefix + number;
+}
+
+let key = localStorage.getItem("mcr4_key");
+let expire = localStorage.getItem("mcr4_expire");
+
+if(!key || !expire || Date.now() > expire){
+
+    key = generateKey();
+
+    expire =
+    Date.now() + 24*60*60*1000;
+
+    localStorage.setItem(
+    "mcr4_key",
+    key
+    );
+
+    localStorage.setItem(
+    "mcr4_expire",
+    expire
+    );
+}
+
+document.getElementById("key")
+.textContent = key;
+
+function copyKey(){
+
+    navigator.clipboard.writeText(key);
+
+    alert("Key copied!");
+}
+
+function updateCountdown(){
+
+    const now = Date.now();
+
+    const distance =
+    expire - now;
+
+    if(distance <= 0){
+
+        localStorage.removeItem(
+        "mcr4_key"
+        );
+
+        localStorage.removeItem(
+        "mcr4_expire"
+        );
+
+        location.reload();
+        return;
+    }
+
+    const hours =
+    Math.floor(distance/(1000*60*60));
+
+    const minutes =
+    Math.floor(
+    (distance%(1000*60*60))
+    /(1000*60)
+    );
+
+    const seconds =
+    Math.floor(
+    (distance%(1000*60))
+    /1000
+    );
+
+    document.getElementById(
+    "countdown"
+    ).textContent =
+    String(hours).padStart(2,'0')
+    + ":" +
+    String(minutes).padStart(2,'0')
+    + ":" +
+    String(seconds).padStart(2,'0');
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+</script>
+
+</body>
+</html>
