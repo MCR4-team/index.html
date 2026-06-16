@@ -1,295 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MCR4 KEY SYSTEM</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
-
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(
-        -45deg,
-        #050505,
-        #07111f,
-        #001f3d,
-        #050505
-    );
-    background-size:400% 400%;
-    animation:bgMove 15s ease infinite;
-    overflow:hidden;
-}
-
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-.container{
-    width:460px;
-    padding:35px;
-    border-radius:30px;
-    background:rgba(15,15,15,.75);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(0,140,255,.4);
-
-    box-shadow:
-    0 0 25px rgba(0,140,255,.4),
-    0 0 70px rgba(0,140,255,.15),
-    inset 0 0 20px rgba(255,255,255,.03);
-
-    text-align:center;
-
-    animation:fadeIn .8s ease;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MCR4 • GOLD KEY SYSTEM</title>
+  <!-- Google Fonts for bold typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a0a0a;
+      background-image: 
+        radial-gradient(circle at 25% 15%, rgba(212, 175, 55, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(180, 130, 20, 0.22) 0%, transparent 55%),
+        linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 1.8rem;
     }
-}
 
-h1{
-    color:white;
-    letter-spacing:3px;
+    /* golden grid overlay effect */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(0deg, rgba(212, 175, 55, 0.1) 0px, transparent 2px, transparent 45px, rgba(212, 175, 55, 0.1) 45px),
+        repeating-linear-gradient(90deg, rgba(212, 175, 55, 0.1) 0px, transparent 2px, transparent 45px, rgba(212, 175, 55, 0.1) 45px);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-    text-shadow:
-    0 0 10px #008cff,
-    0 0 30px #008cff;
-}
+    .container {
+      width: 520px;
+      max-width: 100%;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(28px) saturate(200%);
+      -webkit-backdrop-filter: blur(28px) saturate(200%);
+      border-radius: 48px;
+      padding: 2.8rem 2.2rem;
+      border: 1.8px solid rgba(212, 175, 55, 0.65);
+      box-shadow: 
+        0 35px 60px rgba(0, 0, 0, 0.95),
+        0 0 45px rgba(212, 175, 55, 0.65),
+        inset 0 0 35px rgba(212, 175, 55, 0.2);
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      animation: goldenRise 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s ease;
+    }
 
-.subtitle{
-    color:#78bfff;
-    margin-top:10px;
-    margin-bottom:25px;
-}
+    @keyframes goldenRise {
+      0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
 
-.key-box{
-    background:#000;
-    border:1px solid #008cff;
-    border-radius:18px;
-    padding:18px;
-    color:white;
-    font-size:18px;
-    word-break:break-all;
+    /* MCR4 golden bold logo */
+    .logo-mcr {
+      font-size: 5rem;
+      font-weight: 900;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(180deg, #f9e076 0%, #c99b1e 60%, #7a5c0a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 25px #d4af37, 0 0 55px #b8860b, 0 5px 12px black;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+      display: inline-block;
+      font-family: 'Bebas Neue', 'Impact', 'Poppins', sans-serif;
+      transform: scaleY(1.2);
+      filter: drop-shadow(0 8px 12px #00000080);
+    }
 
-    box-shadow:
-    0 0 15px rgba(0,140,255,.25);
-}
+    .golden-line {
+      width: 100px;
+      height: 7px;
+      background: linear-gradient(90deg, #e6c468, #d4af37, #b4942c, #d4af37, #e6c468);
+      margin: 0.2rem auto 1rem;
+      border-radius: 20px;
+      box-shadow: 0 0 40px #d4af37, 0 0 80px #b8860b;
+    }
 
-.timer{
-    margin-top:15px;
-    color:#8ec8ff;
-    font-size:15px;
-}
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f7e9b0;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-bottom: 2rem;
+      background: rgba(180, 130, 20, 0.2);
+      padding: 0.6rem 2rem;
+      border-radius: 40px;
+      display: inline-block;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.5);
+      word-break: break-word;
+    }
 
-.buttons{
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    margin-top:25px;
-}
+    .key-panel {
+      background: #0d0d0d;
+      border: 2px solid #d4af37;
+      border-radius: 28px;
+      padding: 1.6rem 1.2rem;
+      margin: 1.3rem 0 1.5rem;
+      box-shadow: 0 0 45px rgba(212, 175, 55, 0.75), inset 0 0 22px rgba(180, 130, 0, 0.7);
+      backdrop-filter: blur(14px);
+    }
 
-button{
-    border:none;
-    padding:14px 26px;
-    border-radius:16px;
-    cursor:pointer;
-    color:white;
-    font-weight:bold;
-    transition:.3s;
-}
+    .key-display {
+      font-size: 1.9rem;
+      font-weight: 700;
+      font-family: 'Fira Code', 'Courier New', monospace;
+      background: #0f0b00;
+      color: #f5d742;
+      padding: 1.3rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 3px;
+      word-break: break-all;
+      text-shadow: 0 0 16px #e4b429, 0 0 35px #b8860b;
+      border: 1px solid #c9a32b;
+      box-shadow: inset 0 0 24px rgba(212, 175, 55, 0.6);
+      background: radial-gradient(circle at center, #332800, #080600);
+    }
 
-button:hover{
-    transform:translateY(-3px);
-}
+    .timer-box {
+      margin-top: 1.3rem;
+      color: #f7e6b3;
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: rgba(30, 25, 0, 0.8);
+      padding: 0.7rem 2rem;
+      border-radius: 35px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid #c9a227;
+      backdrop-filter: blur(10px);
+      letter-spacing: 1px;
+      box-shadow: 0 0 18px #c9a22755;
+    }
 
-.copy-btn{
-    background:linear-gradient(
-        135deg,
-        #008cff,
-        #00c3ff
-    );
+    #countdown {
+      font-weight: 800;
+      color: #ffefb2;
+      background: #2b2100;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      margin-left: 6px;
+      text-shadow: 0 0 12px #d4af37;
+      font-size: 1.25rem;
+    }
 
-    box-shadow:
-    0 0 25px rgba(0,140,255,.5);
-}
+    .roblox-owner {
+      margin: 1.8rem 0 0.8rem;
+      background: linear-gradient(135deg, #1c1800, #0a0a0a);
+      border: 1px solid #c9a32b;
+      border-radius: 40px;
+      padding: 0.9rem 1.8rem;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    }
 
-.discord-btn{
-    background:linear-gradient(
-        135deg,
-        #5865F2,
-        #7B86FF
-    );
+    .owner-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #c9a63b;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
 
-    box-shadow:
-    0 0 25px rgba(88,101,242,.5);
-}
+    .owner-user {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #ffd966;
+      text-shadow: 0 0 18px #e6b422, 0 4px 10px black;
+      letter-spacing: 2px;
+      font-family: 'Bebas Neue', 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #ffe484, #bd9718);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 14px #d4af37);
+    }
 
-.footer{
-    margin-top:25px;
-    color:#666;
-    font-size:13px;
-}
-</style>
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin: 2rem 0 1.4rem;
+    }
+
+    button {
+      border: none;
+      padding: 1rem 2.1rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      background: #1a1500;
+      color: #ffe9a7;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 22px rgba(0,0,0,0.8);
+      border: 1px solid rgba(212, 175, 55, 0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .copy-btn {
+      background: linear-gradient(135deg, #7a5f0a, #d4af37);
+      box-shadow: 0 0 40px #d4af37aa, 0 10px 16px black;
+      border: 1px solid #f5e287;
+      color: #000;
+      font-weight: 800;
+      text-shadow: 0 1px 2px white;
+    }
+
+    .discord-btn {
+      background: linear-gradient(135deg, #2b2000, #5e4805);
+      box-shadow: 0 0 32px #d4af37, 0 10px 16px black;
+      border: 1px solid #e6c468;
+      color: #ffe48b;
+    }
+
+    button:hover {
+      transform: translateY(-6px);
+      filter: brightness(1.25);
+      box-shadow: 0 0 55px #e4b429, 0 18px 24px black;
+    }
+
+    button:active {
+      transform: translateY(2px);
+      transition: 0.05s;
+    }
+
+    .footer-text {
+      color: #b4945c;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      border-top: 1px dashed #b4942c;
+      padding-top: 1.4rem;
+      text-shadow: 0 0 8px black;
+      font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 2rem 1.3rem;
+      }
+      .logo-mcr {
+        font-size: 3.8rem;
+        letter-spacing: 5px;
+      }
+      .owner-user {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- MCR4 GOLDEN BLACK LOGO -->
+    <div class="logo-mcr">MCR4</div>
+    <div class="golden-line"></div>
+    <div class="subtitle">✦ GOLD SECURE KEY ✦</div>
 
-<div class="container">
-
-    <h1>MCR4 KEY SYSTEM</h1>
-
-    <div class="subtitle">
-        Premium Secure Key Generator
+    <!-- 28-char key display (IP-based unique key) -->
+    <div class="key-panel">
+      <div class="key-display" id="keyDisplay">GENERATING...</div>
+      <div class="timer-box">
+        ⏳ EXPIRES IN <span id="countdown">24:00:00</span>
+      </div>
     </div>
 
-    <div class="key-box" id="key">
-        Loading...
+    <!-- ROBLOX OWNER: zaman544 displayed clearly -->
+    <div class="roblox-owner">
+      <div class="owner-label">🔸 ROBLOX OWNER 🔸</div>
+      <div class="owner-user">zaman544</div>
     </div>
 
-    <div class="timer">
-        Expires in:
-        <span id="countdown">24:00:00</span>
+    <div class="button-group">
+      <button class="copy-btn" id="copyButton">
+        <span>📋</span> COPY KEY
+      </button>
+      <button class="discord-btn" id="discordButton">
+        <span>💬</span> DISCORD
+      </button>
     </div>
 
-    <div class="buttons">
-        <button class="copy-btn" onclick="copyKey()">
-            📋 Copy Key
-        </button>
-
-        <button class="discord-btn"
-        onclick="window.open('https://discord.gg/crXn2fdMJe','_blank')">
-            💬 Discord
-        </button>
+    <div class="footer-text">
+      © MCR4 GOLD SYSTEM • 28-KEY LOCK
     </div>
+  </div>
 
-    <div class="footer">
-        © MCR4 KEY SYSTEM
-    </div>
+  <script>
+    (function() {
+      // --------------------------------------------------------------
+      // IP-BASED 28-CHARACTER UNIQUE KEY (different per IP address)
+      // Golden & Black theme with Roblox owner zaman544
+      // --------------------------------------------------------------
+      
+      const KEY_LENGTH = 28;
+      const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      
+      function hashString(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+          const char = str.charCodeAt(i);
+          hash = ((hash << 5) - hash) + char;
+          hash |= 0;
+        }
+        return Math.abs(hash);
+      }
 
-</div>
+      function generateIPBasedKey(ipAddress) {
+        const ipHash = hashString(ipAddress);
+        let key = '';
+        
+        function mulberry32(a) {
+          return function() {
+            a |= 0;
+            a = a + 0x6D2B79F5 | 0;
+            let t = Math.imul(a ^ a >>> 15, 1 | a);
+            t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+          };
+        }
+        
+        const baseRng = mulberry32(ipHash);
+        
+        for (let i = 0; i < KEY_LENGTH; i++) {
+          const mixSeed = (ipHash + i * 173) ^ (ipHash >> (i % 9));
+          const dynRng = mulberry32(mixSeed);
+          const randomIndex = Math.floor(dynRng() * CHARS.length);
+          key += CHARS[randomIndex];
+        }
+        
+        return key;
+      }
 
-<script>
+      async function fetchIP() {
+        try {
+          const response = await fetch('https://api.ipify.org?format=json');
+          if (!response.ok) throw new Error('Failed');
+          const data = await response.json();
+          return data.ip;
+        } catch (e) {
+          try {
+            const backupRes = await fetch('https://api.ipify.org?format=json');
+            if (backupRes.ok) {
+              const backupData = await backupRes.json();
+              return backupData.ip;
+            }
+          } catch (err) {}
+          
+          const fallbackId = [
+            navigator.hardwareConcurrency || 4,
+            navigator.language || 'en',
+            screen.width || 1920,
+            screen.height || 1080,
+            new Date().getTimezoneOffset()
+          ].join('-');
+          return 'fallback-' + hashString(fallbackId);
+        }
+      }
 
-function generateKey(){
+      function getStorageKey() {
+        return 'mcr4_golden_system';
+      }
 
-    const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      function loadStoredData() {
+        const stored = localStorage.getItem(getStorageKey());
+        if (stored) {
+          try {
+            return JSON.parse(stored);
+          } catch (e) {
+            return null;
+          }
+        }
+        return null;
+      }
 
-    let prefix = "";
+      function saveStoredData(data) {
+        localStorage.setItem(getStorageKey(), JSON.stringify(data));
+      }
 
-    for(let i=0;i<4;i++){
-        prefix += chars.charAt(
-        Math.floor(Math.random()*chars.length)
-        );
-    }
+      async function initializeSystem() {
+        const keyDisplayElement = document.getElementById('keyDisplay');
+        const countdownElement = document.getElementById('countdown');
+        
+        keyDisplayElement.textContent = 'FETCHING IP...';
+        
+        let userIP;
+        try {
+          userIP = await fetchIP();
+        } catch (error) {
+          userIP = 'unknown-' + Date.now() + '-' + Math.random().toString(36);
+        }
+        
+        const storedData = loadStoredData();
+        const now = Date.now();
+        const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+        
+        let currentKey = null;
+        let expiryTime = null;
+        
+        if (storedData && storedData.ip === userIP && storedData.key && storedData.expire) {
+          if (now < storedData.expire) {
+            currentKey = storedData.key;
+            expiryTime = storedData.expire;
+          } else {
+            currentKey = generateIPBasedKey(userIP);
+            expiryTime = now + TWENTY_FOUR_HOURS;
+          }
+        } else {
+          currentKey = generateIPBasedKey(userIP);
+          expiryTime = now + TWENTY_FOUR_HOURS;
+        }
+        
+        saveStoredData({
+          ip: userIP,
+          key: currentKey,
+          expire: expiryTime
+        });
+        
+        keyDisplayElement.textContent = currentKey;
+        
+        function updateCountdownDisplay() {
+          const currentNow = Date.now();
+          const distance = expiryTime - currentNow;
+          
+          if (distance <= 0) {
+            const newKey = generateIPBasedKey(userIP);
+            const newExpiry = Date.now() + TWENTY_FOUR_HOURS;
+            saveStoredData({
+              ip: userIP,
+              key: newKey,
+              expire: newExpiry
+            });
+            keyDisplayElement.textContent = newKey;
+            expiryTime = newExpiry;
+            updateCountdownDisplay();
+            return;
+          }
+          
+          const hours = Math.floor(distance / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+          countdownElement.textContent = 
+            String(hours).padStart(2, '0') + ':' +
+            String(minutes).padStart(2, '0') + ':' +
+            String(seconds).padStart(2, '0');
+        }
+        
+        updateCountdownDisplay();
+        const countdownInterval = setInterval(updateCountdownDisplay, 1000);
+        
+        document.getElementById('copyButton').addEventListener('click', function() {
+          const keyToCopy = keyDisplayElement.textContent;
+          if (!keyToCopy || keyToCopy.includes('FETCHING') || keyToCopy.includes('GENERATING')) {
+            alert('⛔ Key not ready yet.');
+            return;
+          }
+          
+          navigator.clipboard.writeText(keyToCopy).then(() => {
+            alert('✨ GOLDEN KEY COPIED!');
+          }).catch(() => {
+            const textArea = document.createElement('textarea');
+            textArea.value = keyToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('✨ GOLDEN KEY COPIED!');
+          });
+        });
+        
+        document.getElementById('discordButton').addEventListener('click', function() {
+          window.open('https://discord.gg/crXn2fdMJe', '_blank');
+        });
+        
+        window.addEventListener('beforeunload', () => {
+          clearInterval(countdownInterval);
+        });
+      }
 
-    const number =
-    Math.floor(
-    100000000 + Math.random()*900000000
-    );
-
-    return prefix + number;
-}
-
-let key = localStorage.getItem("mcr4_key");
-let expire = localStorage.getItem("mcr4_expire");
-
-if(!key || !expire || Date.now() > expire){
-
-    key = generateKey();
-
-    expire =
-    Date.now() + 24*60*60*1000;
-
-    localStorage.setItem(
-    "mcr4_key",
-    key
-    );
-
-    localStorage.setItem(
-    "mcr4_expire",
-    expire
-    );
-}
-
-document.getElementById("key")
-.textContent = key;
-
-function copyKey(){
-
-    navigator.clipboard.writeText(key);
-
-    alert("Key copied!");
-}
-
-function updateCountdown(){
-
-    const now = Date.now();
-
-    const distance =
-    expire - now;
-
-    if(distance <= 0){
-
-        localStorage.removeItem(
-        "mcr4_key"
-        );
-
-        localStorage.removeItem(
-        "mcr4_expire"
-        );
-
-        location.reload();
-        return;
-    }
-
-    const hours =
-    Math.floor(distance/(1000*60*60));
-
-    const minutes =
-    Math.floor(
-    (distance%(1000*60*60))
-    /(1000*60)
-    );
-
-    const seconds =
-    Math.floor(
-    (distance%(1000*60))
-    /1000
-    );
-
-    document.getElementById(
-    "countdown"
-    ).textContent =
-    String(hours).padStart(2,'0')
-    + ":" +
-    String(minutes).padStart(2,'0')
-    + ":" +
-    String(seconds).padStart(2,'0');
-}
-
-setInterval(updateCountdown,1000);
-
-updateCountdown();
-
-</script>
-
+      initializeSystem().catch(error => {
+        console.error('MCR4 Golden System error:', error);
+        document.getElementById('keyDisplay').textContent = 'ERROR LOADING';
+      });
+    })();
+  </script>
 </body>
 </html>
